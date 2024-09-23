@@ -12,6 +12,11 @@ export default function ManagePage() {
   const [sortedData, setSortedData] = useState<Data[]>(quoteData)
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc")
   const [sortField, setSortField] = useState<keyof Data>("id")
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false); // Set loading to false once data is ready.
+  }, []);
 
 
   useEffect(() => {
@@ -68,6 +73,16 @@ export default function ManagePage() {
       ],
     }]
   };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="flex flex-col items-center">
+          <p className="mt-4 text-lg font-semibold text-gray-700">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>

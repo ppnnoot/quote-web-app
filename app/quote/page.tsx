@@ -28,7 +28,7 @@ export default function Page() {
         <div className='text-xl font-semibold italic text-gray-800 mb-4'>{ data.text }</div>
         <div className='text-lg font-medium text-gray-600 mb-2'>Likes: { data.likes }</div>
         <button
-          className="px-4 py-1 bg-gray-500 text-white rounded-lg font-medium hover:bg-gray-400 transition-all shadow-md"
+          className="hover:scale-105 active:scale-95 px-4 py-1 bg-gray-500 text-white rounded-lg font-medium hover:bg-gray-400 transition-all shadow-md"
           onClick={() => upLike(data.id)}
         >
           Like
@@ -37,7 +37,7 @@ export default function Page() {
 
       <div className='mt-8'>
         <button
-          className="px-6 py-2 bg-blue-500 text-white rounded-full font-semibold shadow-md hover:bg-blue-400 transition-all"
+          className="px-6 py-2 bg-blue-500 text-white rounded-full font-semibold shadow-md hover:bg-blue-400 transition-all hover:scale-105 active:scale-95"
           onClick={nextIndex}
         >
           Next Quote
