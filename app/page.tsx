@@ -11,7 +11,7 @@ export default function Page() {
         <p className="text-lg text-gray-600 mb-8">
           Discover and enjoy inspiring quotes tailored to your mood.
         </p>
-        <Link href="/quote" className="inline-block px-10 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-500 transition hover:scale-105 active:scale-95">
+        <Link href="/quote" className="inline-block px-10 py-3 text-lg font-semibold text-white bg-blue-500 rounded-lg shadow-lg hover:bg-blue-400 transition hover:scale-105 active:scale-95">
             Start
         </Link>
       </div>
