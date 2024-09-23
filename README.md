@@ -1,37 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Quote App
 
-First, run the development server:
+**Quote App** เป็นแอพพลิเคชันเว็บที่พัฒนาโดยใช้ **TypeScript** ร่วมกับ **Next.js** และ **React** ซึ่งออกแบบมาเพื่อจัดการและแสดงคำคมต่างๆ รวมถึงการให้คะแนนและการแสดงผลการลงคะแนนในรูปแบบกราฟ
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## คุณสมบัติหลัก
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1.  **ระบบคำคม (Quotes)**: แอพพลิเคชันนี้มีระบบจัดการคำคมที่รวมถึงคำคมและคำกวนต่างๆ ที่ผู้ใช้สามารถดูและโต้ตอบได้
+2.  **ระบบโหวต (Vote Result)**: ผู้ใช้สามารถลงคะแนนไลค์คำคมและดูผลการโหวตที่แสดงในรูปแบบกราฟ
+## ข้อกำหนดและฟังก์ชัน
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **หน้า Login**:
+    
+    -   หน้าล็อกอินที่ให้ผู้ใช้ลงชื่อเข้าใช้เพื่อเข้าถึงฟีเจอร์ต่างๆ ของแอพพลิเคชัน
+    -   การตรวจสอบข้อมูลล็อกอินและการจัดการเซสชันผู้ใช้
+2.  **หน้าแสดงรายการคำคม**:
+    
+    -   หน้าสำหรับแสดงรายการคำคมทั้งหมดที่มีในระบบ
+    -   การแสดงคำคมแบบสุ่มและข้อมูลที่เกี่ยวข้อง
+3.  **ฟังก์ชันเพิ่มเติม**:
+    
+    -   **Lazy Loading**: โหลดข้อมูลคำคมตามต้องการเพื่อเพิ่มประสิทธิภาพและลดเวลาการโหลด
+    -   **การค้นหาและกรอง (Search & Filter)**: ฟังก์ชันสำหรับค้นหาและกรองคำคมตามคำหลักและหมวดหมู่
+    -   **การแสดงผลกราฟ (Visualize Chart)**: การแสดงข้อมูลการโหวตในรูปแบบกราฟ (กราฟวงกลม) เพื่อให้ผู้ใช้เห็นการกระจายของคะแนน
+    -   **การจัดเรียง (Sorting)**: ฟังก์ชันการจัดเรียงคำคมตาม ID, ข้อความ, หมวดหมู่ และจำนวนไลค์
+## การติดตั้งและการใช้งาน
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  **โคลนโปรเจกต์**:
+    
+    `git clone https://github.com/ppnnoot/quote/app.git` 
+    
+2.  **เข้าสู่ไดเรกทอรีของโปรเจกต์**:
+    
+    `cd quote-app` 
+    
+3.  **ติดตั้งการพึ่งพา**:
+    
+    `npm install` 
+    
+4.  **เริ่มเซิร์ฟเวอร์พัฒนา**:
+    
+    `npm run dev` 
+    
+    เปิดเบราว์เซอร์ของคุณและไปที่ `http://localhost:3000` เพื่อดูแอพ
 
-## Learn More
+> URL
 
-To learn more about Next.js, take a look at the following resources:
+		`/`			: หน้าเริ่มต้น 
+		`/quote`	: หน้าแสดงรายการคำคม 
+		`/login`	: หน้าเข้าสู่ระบบ
+		`/manage`	: หน้าแสดงผลการลงคะแนนและการจัดการคำคม
+		
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+		ข้อมูลการเข้าสู่ระบบ:  
+		อีเมล: user@example.com
+		รหัสผ่าน: password
+		เมื่อล็อกอินสำเร็จจะถูกเปลี่ยนเส้นทางไปที่หน้า /manage
+	
 
-## Deploy on Vercel
+    
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## เทคโนโลยีที่ใช้
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# quote-web-app
+-   **TypeScript**: ภาษาโปรแกรมที่ใช้สำหรับการพัฒนาแอพพลิเคชัน
+-   **Next.js**: Framework สำหรับการพัฒนาแอพพลิเคชัน React ที่มีการเรนเดอร์เซิร์ฟเวอร์
+-   **React**: ไลบรารีสำหรับการสร้าง UI
+-   **Tailwind CSS**: Framework สำหรับการออกแบบและตกแต่ง UI
+-   **Chart.js**: ไลบรารีสำหรับการแสดงกราฟ
+  
