@@ -1,11 +1,20 @@
 import Link from 'next/link'
 import React from 'react'
 
-
-export default function page() {
+export default function Page() {
   return (
-    <div>Welcome
-        <Link href="/quote">start</Link>
+    <div className="flex flex-col h-screen items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-4xl font-extrabold text-gray-800 mb-6">
+          Welcome to the Quote App
+        </h1>
+        <p className="text-lg text-gray-600 mb-8">
+          Discover and enjoy inspiring quotes tailored to your mood.
+        </p>
+        <Link href="/quote" className="inline-block px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-500 transition duration-300">
+            Start
+        </Link>
+      </div>
     </div>
   )
 }

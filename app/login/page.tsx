@@ -1,7 +1,27 @@
-import React from 'react'
-import '../globals.css'
+"use client"
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import '../globals.css';
 
 export default function LoginPage() {
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+
+    if (email === 'user@example.com' && password === 'password') {
+      router.push('/manage');
+    } else {
+      setError('Invalid credentials');
+    }
+  }
+
   return (
     <>
       <div className='flex items-center justify-center min-h-screen'>
@@ -13,7 +33,7 @@ export default function LoginPage() {
           </div>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form action="#" method="POST" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                   Email address
@@ -56,10 +76,12 @@ export default function LoginPage() {
                   Sign in
                 </button>
               </div>
+
+              {error && <p className="text-red-500">{error}</p>}
             </form>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }

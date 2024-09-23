@@ -16,7 +16,7 @@ export default function RootLayout({
             <div className='fixed top-0 left-0 w-full'>
               <div className='flex justify-between items-center w-full py-4 px-6'>
                 <Link href={"./quote"} className='text-2xl font-bold'>Quote App</Link>
-                <div className='bg-gray-400 w-8 h-8 rounded-full outline outline-2 outline-offset-4 outline-gray-400 hover:cursor-pointer'></div>
+                <Link href={"./login"} className='bg-gray-400 w-8 h-8 rounded-full outline outline-2 outline-offset-4 outline-gray-400 hover:cursor-pointer'></Link>
               </div>
             </div>
             <div>
